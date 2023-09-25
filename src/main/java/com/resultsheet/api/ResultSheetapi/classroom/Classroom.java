@@ -1,7 +1,10 @@
 package com.resultsheet.api.ResultSheetapi.classroom;
 
+import com.resultsheet.api.ResultSheetapi.exam.Exam;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,6 +30,9 @@ public class Classroom {
     private Integer grade;
     private String mode;
     private String type;
+
+//    @OneToMany(mappedBy = "classroom")
+//    private List<Exam> exams;
 
     public Long getId() {
         return id;
