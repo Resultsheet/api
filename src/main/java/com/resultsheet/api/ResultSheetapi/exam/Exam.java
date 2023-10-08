@@ -1,6 +1,5 @@
 package com.resultsheet.api.ResultSheetapi.exam;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.resultsheet.api.ResultSheetapi.classroom.Classroom;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -12,8 +11,8 @@ import lombok.Setter;
 public class Exam {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Classroom_GEN")
-    @SequenceGenerator(name = "Classroom_GEN", sequenceName = "Classroom_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Exam_GEN")
+    @SequenceGenerator(name = "Exam_GEN", sequenceName = "Exam_SEQ", allocationSize = 1)
     @Column(name = "id", nullable = false)
     private Long id;
     private String name;
@@ -23,6 +22,7 @@ public class Exam {
     private String type;
     private boolean isGraded;
     private String subject;
+
     @ManyToOne
     @JoinColumn(name = "classroom_id")
     private Classroom classroom;
