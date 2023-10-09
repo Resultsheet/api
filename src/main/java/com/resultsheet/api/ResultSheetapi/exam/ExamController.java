@@ -24,4 +24,10 @@ public class ExamController {
     public Exam saveExam(@PathVariable Long classroomId, @RequestBody Exam exam){
         return examService.saveExam(classroomId, exam);
     }
+
+    @DeleteMapping
+    public void deleteExam(){
+    }
+
+
 }
