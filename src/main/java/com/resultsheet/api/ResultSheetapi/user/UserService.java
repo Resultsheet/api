@@ -21,6 +21,7 @@ public class UserService {
         return userRepository.findAll();
     }
 
+
     public void saveUser(User user) {
         Optional<User> userEmail = userRepository.findUserByEmail(user.getEmail());
         if(userEmail.isPresent()){
@@ -57,5 +58,10 @@ public class UserService {
             }
             user.setLastName(email);
         }
+    }
+
+    public User getUserById(Long userId) {
+        User user = userRepository.findById(userId).orElseThrow(() -> new IllegalStateException("user does not exists."));
+        return user;
     }
 }
